@@ -17,7 +17,6 @@ function audiopausehoga() {
     mainplay.classList.remove("fa-circle-play");
     mainplay.classList.add("fa-circle-pause");
 }
-
 function audioplayhoga() {
     mainplay.classList.remove("fa-circle-pause");
     mainplay.classList.add("fa-circle-play");
@@ -38,8 +37,8 @@ mainplay.addEventListener('click', () => {
 });
 
 back.addEventListener('click', () => {
-    if (q !== 0) {
-        let prev = q;
+    if (q != 0) {
+        prev = q;
         q--;
         let k = `${songname[q].innerHTML}.mp3`;
         audioplay.pause();
@@ -52,12 +51,13 @@ back.addEventListener('click', () => {
         songicon[prev].classList.add("fa-circle-play");
         mainplay.classList.remove("fa-circle-play");
         mainplay.classList.add("fa-circle-pause");
+        prev = q;
     }
 });
 
 next.addEventListener('click', () => {
-    if (q !== 15) {
-        let prev = q;
+    if (q != 15) {
+        prev = q;
         q++;
         let k = `${songname[q].innerHTML}.mp3`;
         audioplay.pause();
@@ -70,11 +70,12 @@ next.addEventListener('click', () => {
         songicon[prev].classList.add("fa-circle-play");
         mainplay.classList.remove("fa-circle-play");
         mainplay.classList.add("fa-circle-pause");
+        prev = q;
     }
 });
 
-slider.addEventListener('input', () => {
-    audioplay.currentTime = (slider.value * audioplay.duration) / 100;
+slider.addEventListener('click', () => {
+    audioplay.currentTime = ((slider.value * audioplay.duration) / 100);
 });
 
 audioplay.addEventListener('timeupdate', () => {
@@ -82,10 +83,11 @@ audioplay.addEventListener('timeupdate', () => {
     slider.value = progress;
 });
 
-songcontent.forEach((songElement, index) => {
-    songElement.querySelector(".rarara").addEventListener('click', () => {
-        let o = `${songElement.querySelector(".songname").innerHTML}.mp3`;
-        if (q !== index) {
+let prev = q;
+songcontent.forEach((song, index) => {
+    song.querySelector(".rarara").addEventListener('click', () => {
+        let o = `${song.querySelector(".songname").innerHTML}.mp3`;
+        if (q != index) {
             audioplay.pause();
             audioplay.src = o;
             audioplay.load();
@@ -113,17 +115,19 @@ songcontent.forEach((songElement, index) => {
     });
 });
 
-searchicon.addEventListener('click', () => {
-    song.forEach((songElement, index) => {
-        if (songElement.querySelector(".songname").innerText.toLowerCase() !== inputtext.value.toLowerCase()) {
-            songElement.style.display = "none";
+searchicon.addEventListener('click', disable);
+function disable() {
+    song.forEach((na, index) => {
+        if (song[index].innerText !== inputtext.value) {
+            song[index].style.display = "none";
         }
     });
-});
+}
 
-crossbutt.addEventListener('click', () => {
+crossbutt.addEventListener('click', enable);
+function enable() {
     inputtext.value = "";
-    song.forEach((songElement) => {
-        songElement.style.display = "flex";
+    song.forEach((na, index) => {
+        song[index].style.display = "flex";
     });
-});
+}
