@@ -1,218 +1,249 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    border: border-box;
-  
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-body{
-    background-color: black;
+
+body {
+    background-color: #000;
+    color: #fff;
 }
-/* navlogo */
-.navbar{
-    background-color: black;
+
+/* ===== Navbar ===== */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.firstpart,.secondpart{
-    display:flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 30%;
-    color: azure;
-}
-.inputbarr{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.spotifypic{
-    height: 70px;
-}
-.navbarlogo{
-   font-size: 30px;
-}
-.premium{
-   background-color:white ;
-  color: black;
- width: 50%;
- height: 35px;
-display: flex;
-align-items: center;
-justify-content: space-around;
-}
-.sider{
-    background-color: rgb(255, 255, 255);
-      width: 30px;
-      height: 35px;
-      border-top-right-radius: 50%;
-      border-bottom-right-radius: 50%;
-}
-.sidel{
-    background-color: rgb(255, 255, 255);
-    width: 30px;
-    height: 35px;
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.middpart{
-    width:40%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-}
-#text{
-    width: 30vw;
-    height: 35px;
-    border: 0px,solid,white;
-    outline: none;
+    padding: 10px 5%;
+    background-color: #121212;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.riruru{
-    color: rgb(233, 233, 233);
-    font-size: 30px;
-}
-.premiumm{
-    display: flex;
-    width: 50%;
-}
-/* main body */
-
-.playlistcontent{
-    background-color: white;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-    width: 10vw;
-      height: 35px;
-
-}
-.creteplaylist{
-    display: flex;
-    margin: 5vh;
+.spotifypic {
+    height: 50px;
+    margin-right: 20px;
 }
 
-
-
-
-
-.song{
-
- width: 200px;
- height: 300px;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- margin: 3vh;
-
-}
-.songlogo{
-    background-color: aqua;
-    width:10vw;
-    height: 20vh;
-    background-size: cover;
-    margin: 2px;
-}
-.songcc{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.navbarlogo {
+    font-size: 24px;
+    margin: 0 10px;
+    cursor: pointer;
     color: white;
 }
-.songcontent{
-    margin-bottom: 2vh;
-   display: flex;
-  
-   
+
+.middpart {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    gap: 10px;
 }
 
-.rarara{
-    visibility: visible;
+.inputbarr {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 0 10px;
 }
-.songname:hover{
-    text-decoration: underline;
 
+#text {
+    border: none;
+    outline: none;
+    padding: 8px 10px;
+    font-size: 14px;
+    width: 30vw;
+    border-radius: 20px;
 }
-.playlistpanel{
-    background-color: rgb(0, 0, 0);
-    width: 30%;
-  
+
+.cross i {
+    font-size: 24px;
+    cursor: pointer;
 }
-.songpanel{
+
+.secondpart {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.premiumm {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.installapp {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #1db954;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* ===== Layout ===== */
+.songcontent {
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid black;
-      width: 80%;
-    background-color: rgb(41, 44, 44);
+    padding: 20px;
+    gap: 20px;
 }
-/* bottom */
-.bottom{
-    background-color:rgb(0, 0, 0);
-      position: fixed;
-      width: 100%;
-      height: 13vh;
-    bottom:0;
+
+.playlistpanel {
+    background-color: #121212;
+    flex: 1 1 200px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.creteplaylist {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+    color: white;
+    background-color: #1f1f1f;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.songpanel {
+    flex: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    background-color: #212121;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* ===== Song Cards ===== */
+.song {
+    width: 180px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.song:hover {
+    transform: scale(1.05);
+}
+
+.songlogo {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.songcc {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.songname {
+    flex: 1;
+    font-size: 16px;
+    color: #fff;
+}
+
+.songname:hover {
+    text-decoration: underline;
+}
+
+.rarara {
+    font-size: 22px;
+    color: #1db954;
+    cursor: pointer;
+}
+
+/* ===== Bottom Player Bar ===== */
+.bottom {
+    background-color: #121212;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 12vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-   justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
 }
-.uppericon{
-    font-size: 6vh;
+
+.uppericon i {
+    font-size: 24px;
+    margin: 0 15px;
     color: white;
+    cursor: pointer;
 }
-.slider{
-padding-top: 5px;
-width:60vw;
-}  
 
+.slider {
+    width: 600px;
+}
 
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+    #text {
+        width: 50vw;
+    }
 
+    .song {
+        width: 160px;
+    }
 
-/* Responsive Design */
+    .slider {
+        width: 500px;
+    }
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .firstpart,
-    .secondpart,
-    .middpart {
-        width: 100%;
-        justify-content: space-between;
-        margin: 0.5rem 0;
+    .songcontent {
+        flex-direction: column;
     }
 
-    .songlogo {
-        width: 80%;
-        height: 150px;
-    }
-
+    .playlistpanel,
     .songpanel {
         width: 100%;
-        justify-content: center;
     }
 
-    .premium,
-    .premiumm {
+    .song {
+        width: 100%;
+    }
+
+    .inputbarr {
         width: 100%;
     }
 
     #text {
-        max-width: 90%;
+        width: 90%;
     }
 
     .bottom {
-        height: 15vh;
+        height: auto;
+        padding: 10px;
     }
 
     .slider {
-        width: 90vw;
+        width: 300px;
     }
 }
